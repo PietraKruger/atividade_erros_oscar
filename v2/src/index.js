@@ -72,6 +72,7 @@ app.put('/tarefas/:id', async (req, res) => {
 // DELETAR uma tarefa
 app.delete('/tarefas/:id', async (req, res) => {
  try {
+    //aqui não fecha colchetes
  const resultado = await pool.query('DELETE FROM tarefas WHERE id = $1 RETURNING *', [req.params. if (resultado.rows.length === 0) {
  return res.status(404).json({ erro: 'Tarefa nao encontrada' });
  }
